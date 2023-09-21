@@ -1,0 +1,20 @@
+{
+    "name": "hugomyb/error-mailer",
+    "description": "Receive instant alerts to stay informed about errors occurring on your website and act swiftly to enhance its stability. This Laravel package simplifies the sending of emails containing detailed error information, allowing you to effectively monitor your application's health.",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Hugomyb\\ErrorMailer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mayonobe Hugo",
+            "email": "hugomayonobe@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^v10.24.0"
+    }
+}
