@@ -15,12 +15,12 @@ class ErrorMailerServiceProvider extends ServiceProvider
         ],
     ];
 
-    protected $commands = [
-        PublishPackageConfig::class,
-    ];
-
     public function boot()
     {
+        $this->publishes([
+            __DIR__.'/../config/error-mailer.php' => config_path('error-mailer.php'),
+        ]);
+
         $this->loadViewsFrom(__DIR__.'../resources/views', 'error-mailer');
     }
 }
