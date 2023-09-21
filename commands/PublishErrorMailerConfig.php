@@ -12,7 +12,7 @@ class PublishErrorMailerConfig extends Command
         $this->info('Publishing configuration file for Error Mailer package...');
 
         $this->call('vendor:publish', [
-            '--provider' => 'NomDuPackage\ErrorMailerServiceProvider',
+            '--provider' => 'ErrorMailerServiceProvider',
             '--tag' => 'config'
         ]);
 
