@@ -18,4 +18,9 @@ class ErrorMailerServiceProvider extends ServiceProvider
     protected $commands = [
         PublishPackageConfig::class,
     ];
+
+    public function boot()
+    {
+        $this->loadViewsFrom(__DIR__.'/resources/views/mails', 'error-mailer');
+    }
 }
