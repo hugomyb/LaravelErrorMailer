@@ -16,10 +16,11 @@ class ErrorMailerServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'errorMailer');
 
         $this->publishes([
             __DIR__.'/../config/error-mailer.php' => config_path('error-mailer.php'),
         ]);
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'errorMailer');
     }
 }
