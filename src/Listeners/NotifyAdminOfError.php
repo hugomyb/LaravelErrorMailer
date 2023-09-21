@@ -28,7 +28,7 @@ class NotifyAdminOfError
      */
     public function handle($event)
     {
-        dd(config('email.recipient'));
+        dd(config('errorMailer.email.recipient'));
         $recipient = Config::get('error-mailer.email.recipient');
 
         Mail::to($recipient)->send(new ErrorOccurred($event->context['exception']));
