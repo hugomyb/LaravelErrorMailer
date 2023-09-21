@@ -25,7 +25,7 @@ class ErrorMailerServiceProvider extends ServiceProvider
             'error-mailer:publish-config',
         ]);
 
-        Event::subscribe(NotifyAdminOfError::class);
+        $this->app->register(EventServiceProvider::class);
     }
 
     public function boot()
