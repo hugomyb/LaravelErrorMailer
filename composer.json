@@ -2,7 +2,7 @@
     "name": "hugomyb/error-mailer",
     "description": "Receive instant alerts to stay informed about errors occurring on your website and act swiftly to enhance its stability. This Laravel package simplifies the sending of emails containing detailed error information, allowing you to effectively monitor your application's health.",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
