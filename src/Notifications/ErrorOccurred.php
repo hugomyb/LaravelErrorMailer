@@ -2,13 +2,14 @@
 
 namespace Hugomyb\ErrorMailer\Notifications;
 
+use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Config;
 
 class ErrorOccurred extends Mailable
 {
-    use SerializesModels;
+    use Queueable, SerializesModels;
 
     public $exception;
 
@@ -17,14 +18,7 @@ class ErrorOccurred extends Mailable
         $this->exception = $exception;
     }
 
-//    public function build()
-//    {
-//        return $this->subject(Config::get('error-mailer.email.subject'))
-//            ->markdown('errorMailer::error')
-//            ->with(['exception' => $this->exception]);
-//    }
-
-    protected function buildMarkdownView()
+    public function build()
     {
         return $this->subject(Config::get('error-mailer.email.subject'))
             ->markdown('errorMailer::error')
