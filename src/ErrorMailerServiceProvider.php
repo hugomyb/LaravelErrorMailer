@@ -15,10 +15,6 @@ class ErrorMailerServiceProvider extends ServiceProvider
         ],
     ];
 
-    protected $commands = [
-        PublishErrorMailerConfig::class,
-    ];
-
     public function register()
     {
         $this->commands([
