@@ -1,4 +1,4 @@
-# Error Mailer
+# Laravel Error Mailer
 
 Receive instant alerts to stay informed about errors occurring on your website and act swiftly to enhance its stability.
 This Laravel package simplifies the sending of emails containing detailed error information, allowing you to effectively
