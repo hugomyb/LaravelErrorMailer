@@ -5,6 +5,7 @@ namespace Hugomyb\ErrorMailer;
 use Hugomyb\ErrorMailer\Listeners\NotifyAdminOfError;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Log\Events\MessageLogged;
+use PublishErrorMailerConfig;
 
 class ErrorMailerServiceProvider extends ServiceProvider
 {
@@ -13,6 +14,15 @@ class ErrorMailerServiceProvider extends ServiceProvider
             NotifyAdminOfError::class,
         ],
     ];
+
+    protected $commands = [
+        PublishErrorMailerConfig::class,
+    ];
+
+    public function register()
+    {
+        $this->app->register(PublishErrorMailerConfig::class);
+    }
 
     public function boot()
     {
