@@ -6,8 +6,8 @@ use Illuminate\Console\Command;
 
 class PublishPackageConfig extends Command
 {
-    protected $signature = 'package-name:publish-config';
-    protected $description = 'Publish the package configuration file';
+    protected $signature = 'error-mailer:publish-config';
+    protected $description = 'Publish the error-mailer configuration file';
 
     public function handle()
     {
@@ -16,6 +16,6 @@ class PublishPackageConfig extends Command
             '--provider' => 'Hugomyb\ErrorMailer\ErrorMailerServiceProvider',
         ]);
 
-        $this->info('Package configuration published successfully.');
+        $this->info('Error-mailer configuration published successfully.');
     }
 }
