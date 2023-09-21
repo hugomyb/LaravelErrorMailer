@@ -20,7 +20,7 @@ class ErrorOccurred extends Mailable
     public function build()
     {
         return $this->subject(Config::get('error-mailer.email.subject'))
-            ->markdown('error-mailer::mails.error')
+            ->markdown('error-mailer::error')
             ->with(['exception' => $this->exception]);
     }
 }

@@ -21,6 +21,6 @@ class ErrorMailerServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/resources/views/mails', 'error-mailer');
+        $this->loadViewsFrom(__DIR__.'../resources/views', 'error-mailer');
     }
 }
