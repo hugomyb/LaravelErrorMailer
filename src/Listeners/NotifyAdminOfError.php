@@ -29,6 +29,7 @@ class NotifyAdminOfError
     public function handle($event)
     {
         if (config()->has('error-mailer.email.recipient')) {
+            dd(config('error-mailer.email.recipient'));
             $recipient = config('error-mailer.email.recipient');
         } else {
             $recipient = 'destinataire@example.com';
