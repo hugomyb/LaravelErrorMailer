@@ -29,7 +29,7 @@ class ErrorMailerServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../config/error-mailer.php' => config_path('error-mailer.php'),
-        ]);
+        ], 'config');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'errorMailer');
     }
