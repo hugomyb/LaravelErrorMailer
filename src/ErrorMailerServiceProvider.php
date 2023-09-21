@@ -14,6 +14,17 @@ class ErrorMailerServiceProvider extends ServiceProvider
         ],
     ];
 
+    public function register()
+    {
+        $this->app->singleton('command.error-mailer:publish-config', function ($app) {
+            return new \Hugomyb\ErrorMailer\Commands\PublishErrorMailerConfig();
+        });
+
+        $this->commands([
+            'command.error-mailer:publish-config',
+        ]);
+    }
+
     public function boot()
     {
         $this->publishes([
