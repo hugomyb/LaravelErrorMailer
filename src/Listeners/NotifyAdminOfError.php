@@ -34,8 +34,6 @@ class NotifyAdminOfError
             $recipient = 'destinataire@example.com';
         }
 
-        dd($recipient);
-
         Mail::to($recipient)->send(new ErrorOccurred($event->context['exception']));
     }
 }
