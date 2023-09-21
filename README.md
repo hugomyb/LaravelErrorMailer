@@ -54,7 +54,7 @@ dynamically include your application's name.
 
 <hr/>
 
-> ⚠️ **IMPORTANT : Make sure to configure a mail server in your .env file :**
+> ⚠️ **IMPORTANT ! Make sure to configure a mail server in your .env file :**
 
 ```sh
 MAIL_MAILER=smtp
