@@ -19,11 +19,6 @@ class ErrorMailerServiceProvider extends ServiceProvider
         PublishErrorMailerConfig::class,
     ];
 
-    public function register()
-    {
-        $this->app->register(PublishErrorMailerConfig::class);
-    }
-
     public function boot()
     {
         $this->publishes([
