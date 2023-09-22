@@ -44,7 +44,7 @@ return [
 
 ## Configuration
 
-After publishing the configuration file, you can modify it to suit your needs. Open config/error-mailer.php and
+After publishing the configuration file, you can modify it to suit your needs. Open `config/error-mailer.php` and
 customize the following options:
 
 `'recipient'`: Set the email address where error notifications will be sent.
