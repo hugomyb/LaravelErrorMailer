@@ -39,6 +39,10 @@ return [
         'recipient' => 'recipient@example.com',
         'subject' => 'Une erreur est survenue - ' . env('APP_NAME'),
     ],
+
+    'disabledOn' => [
+        // 'local',
+    ],
 ];
 ```
 
@@ -51,6 +55,15 @@ customize the following options:
 
 `'subject'`: Define the subject line for error notification emails. You can use placeholders like `env('APP_NAME')` to
 dynamically include your application's name.
+
+`'disabledOn'`: You can specify a list of environments (based on `APP_ENV`) where the Error Mailer will be disabled.
+For example, if you want to disable the mailer in the local environment, add 'local' to the array:
+
+```php
+'disabledOn' => [
+    'local',
+],
+```
 
 <hr/>
 
