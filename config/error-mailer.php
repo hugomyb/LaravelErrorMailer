@@ -3,6 +3,6 @@
 return [
     'email' => [
         'recipient' => 'recipient@example.com',
-        'subject' => 'Une erreur est survenue - ' . env('APP_NAME'),
+        'subject' => __('error_message') . env('APP_NAME'),
     ],
 ];

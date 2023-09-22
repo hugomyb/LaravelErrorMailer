@@ -4,7 +4,7 @@
     "keywords": ["error","mailer"],
     "homepage": "https://github.com/hugomayo7/ErrorMailer",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Hugomyb\\ErrorMailer\\": "src/"
@@ -18,6 +18,6 @@
     ],
     "require": {
         "php": "^8.0",
-        "laravel/framework": ">=7.0 <=10.0"
+        "laravel/framework": ">=7.0"
     }
 }
