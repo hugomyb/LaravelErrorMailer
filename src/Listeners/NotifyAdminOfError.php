@@ -28,12 +28,14 @@ class NotifyAdminOfError
      */
     public function handle($event)
     {
-        if (config()->has('error-mailer.email.recipient')) {
-            $recipient = config('error-mailer.email.recipient');
-        } else {
-            $recipient = 'destinataire@example.com';
-        }
+        if (!config('error-mailer.disabledOn') || !in_array(env('APP_ENV'), config('error-mailer.disabledOn')) ) {
+            if (config()->has('error-mailer.email.recipient')) {
+                $recipient = config('error-mailer.email.recipient');
+            } else {
+                $recipient = 'destinataire@example.com';
+            }
 
-        Mail::to($recipient)->send(new ErrorOccurred($event->context['exception']));
+            Mail::to($recipient)->send(new ErrorOccurred($event->context['exception']));
+        }
     }
 }
