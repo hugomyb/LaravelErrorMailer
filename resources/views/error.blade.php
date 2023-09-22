@@ -1,11 +1,11 @@
 <x-mail::message>
-## Erreur :
+## Error :
 # {{ $exception ? $exception->getMessage() : "" }}
 
-## Fichier :
+## File :
 # {{ $exception ? $exception->getFile() : "" }}
 
-## Ligne :
+## Line :
 # {{ $exception ? $exception->getLine() : "" }}
 
 ## Trace :
