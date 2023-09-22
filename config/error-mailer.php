@@ -6,5 +6,7 @@ return [
         'subject' => 'Une erreur est survenue - ' . env('APP_NAME'),
     ],
 
-    'disabledOn' => null,
+    'disabledOn' => [
+        // 'local',
+    ],
 ];
