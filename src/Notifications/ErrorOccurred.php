@@ -20,8 +20,31 @@ class ErrorOccurred extends Mailable
 
     public function build()
     {
+        $stackTrace = $this->formatStackTrace($this->exception);
+
         return $this->subject(config('error-mailer.email.subject'))
             ->markdown('errorMailer::error')
-            ->with(['exception' => $this->exception]);
+            ->with(['exception' => $this->exception, 'stackTrace' => $stackTrace]);
+    }
+
+    function formatStackTrace($exception) {
+        $trace = $exception->getTraceAsString();
+        $traceLines = explode("\n", $trace);
+        $formattedTrace = [];
+
+        foreach ($traceLines as $line) {
+            // Extraction des informations clés de chaque ligne
+            if (preg_match('/^#(\d+) (.*?):(.*)$/', $line, $matches)) {
+                $number = $matches[1];
+                $path = trim($matches[2]);
+                $detail = trim($matches[3]);
+
+                // Formatage de chaque entrée de la stack trace
+                $formattedLine = "### $number $path\n$detail\n";
+                $formattedTrace[] = $formattedLine;
+            }
+        }
+
+        return implode("\n", $formattedTrace);
     }
 }
