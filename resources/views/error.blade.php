@@ -9,5 +9,5 @@
 # {{ $exception ? $exception->getLine() : "" }}
 
 ## Trace :
-# {{ $exception || $stackTrace ? $stackTrace : "" }}
+{{ $exception || $stackTrace ? $stackTrace : "" }}
 </x-mail::message>
