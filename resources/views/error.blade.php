@@ -1,4 +1,7 @@
 <x-mail::message>
+## Environment :
+# {{ env('APP_URL') ?? "" }}
+
 ## Error :
 # {{ $exception ? $exception->getMessage() : "" }}
 
@@ -7,6 +10,9 @@
 
 ## Line :
 # {{ $exception ? $exception->getLine() : "" }}
+
+## URL :
+# {{ request()->url() ?? "" }}
 
 ## Trace :
 {{ $exception || $stackTrace ? $stackTrace : "" }}
