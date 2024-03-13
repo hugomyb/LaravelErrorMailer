@@ -12,7 +12,7 @@
 # {{ $exception ? $exception->getLine() : "" }}
 
 ## URL :
-# {{ request()->url() ?? "" }}
+# {{ url(request()->getPathInfo()) ?? "" }}
 
 ## Trace :
 {{ $exception || $stackTrace ? $stackTrace : "" }}

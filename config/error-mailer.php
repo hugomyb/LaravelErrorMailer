@@ -9,4 +9,6 @@ return [
     'disabledOn' => [
         //
     ],
+
+    'cacheCooldown' => 10, // in minutes
 ];

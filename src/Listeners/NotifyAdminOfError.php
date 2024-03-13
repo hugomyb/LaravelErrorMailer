@@ -40,7 +40,7 @@ class NotifyAdminOfError
                 $errorHash = md5($event->context['exception']->getMessage() . $event->context['exception']->getFile());
 
                 $cacheKey = 'error_mailer_' . $errorHash;
-                $coolDownPeriod = 15;
+                $coolDownPeriod = config('error-mailer.cacheCooldown') ?? 10;
 
                 if (!Cache::has($cacheKey)) {
                     Mail::to($recipient)->send(new ErrorOccurred($event->context['exception']));
