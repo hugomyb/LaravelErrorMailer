@@ -43,6 +43,8 @@ return [
     'disabledOn' => [
         //
     ],
+
+    'cacheCooldown' => 10, // in minutes
 ];
 ```
 
@@ -55,6 +57,8 @@ customize the following options:
 
 `'subject'`: Define the subject line for error notification emails. You can use placeholders like `env('APP_NAME')` to
 dynamically include your application's name.
+
+`'cacheCooldown'`: Set the cooling-off period (in minutes) for error notifications. If the same error occurs several times within this period.
 
 `'disabledOn'`: You can specify a list of environments (based on `APP_ENV`) where the Error Mailer will be disabled.
 For example, if you want to disable the mailer in the local environment, add 'local' to the array:
